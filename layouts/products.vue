@@ -18,6 +18,9 @@
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li><NuxtLink to="/about">About</NuxtLink></li>
         <li><NuxtLink to="/products">Products</NuxtLink></li>
+        <li><NuxtLink to="/login">Login</NuxtLink></li>
+        <li><NuxtLink to="/register">Register </NuxtLink></li>
+
       </ul>
     </footer>
 </template> 
