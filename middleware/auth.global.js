@@ -1,3 +1,4 @@
+//add this as auth.js not as auth.global.js
 import { isLoggedIn } from "~/composables/states.js"
 
 export default defineNuxtRouteMiddleware (( to, from ) => {
