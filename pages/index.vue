@@ -1,13 +1,15 @@
 <template>
     <div>
       <h2>Home</h2>
-      <p>Routing in Nuxt.js</p>
+      <p>Routing in Nuxt.js with middleware and pluggins</p>
       <p>Components, Pages, and Layouts.</p>
     </div>
 </template>
 
 <script setup>
-
+    definePageMeta({
+    middleware:["auth"]
+})
 </script>
 
 <style scoped>
