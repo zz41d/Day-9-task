@@ -1,4 +1,5 @@
 // without provide key
+//save this file as login.vue
 export default defineNuxtPlugin((nuxtApp)=>{
   const users=usersList()
   nuxtApp.login=(username,password)=>{
