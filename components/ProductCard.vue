@@ -10,6 +10,9 @@
 
 <script setup>
   const {product}=defineProps(['product'])
+  definePageMeta({
+    middleware:["auth"]
+})
 </script>
 
 <style scoped>
