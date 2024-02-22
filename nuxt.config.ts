@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules:['@nuxtjs/tailwindcss'],
   plugins: [
-    '~/plugins/auth.js'
+    '~/plugins/login.js',
+    '~/plugins/register.js'
   ],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })
       
