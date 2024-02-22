@@ -22,7 +22,10 @@
  definePageMeta({
     layout:'products'
    })
-   
+   definePageMeta({
+    middleware:["auth"]
+})   
+
 
 </script>
 
