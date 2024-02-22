@@ -1,17 +1,10 @@
+import { isLoggedIn } from "~/composables/states.js"
 
-export default defineNuxt ({ store, redirect }) {
-    // If user is not logged in, redirect to login page
-  //   if (!store.state.auth.loggedIn) {
-  //     return redirect('/login');
-  //   }
-  // }
-  
-  const  isLoggedIn=false
-  if(!isLoggedIn && to.path!=='/login'){
-      return navigateTo("/login")
+export default defineNuxtRouteMiddleware (( to, from ) => {
+  const loginStatus=isLoggedIn()
+  if(loginStatus.value===false && to.path!=='/login'){
+      return navigateTo('/login')
+  }else if(loginStatus.value===true && to.path==='/login'){
+      return navigateTo('/')
   }
-  else if(isLoggedIn && to.path==='/login'){
-      
-  return navigateTo("/")
-}
-}
+})
