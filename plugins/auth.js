@@ -1,18 +1,10 @@
+// without provide key
+export default defineNuxtPlugin((nuxtApp)=>{
+  const users=usersList()
+  nuxtApp.login=(username,password)=>{
+      console.log(username)
+      console.log(password)
+      return users.value.some((item)=>item.user===username && item.pass===password)
 
-export default function ({ app }, inject) {
-    const auth = {
-      login(username, password) {
-
-      },
-      logout() {
-
-      },
-      register(username, email, password) {
-  
-      }
-   
-    };
-  
-    inject('auth', auth);
   }
-  
+})
