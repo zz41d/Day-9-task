@@ -16,8 +16,14 @@
    })
 //  fetch the data
   const {data : products}= await useFetch('https://fakestoreapi.com/products')
+  definePageMeta({
+    middleware:["auth"]
+})
+ 
+ useHead({
+  title:  'Baazar | Clothing and Accessories',
+  meta:[
+        { name:'Description', content:'Clo'}
+      ],
+ })
 </script>
-
-<style lang="scss" scoped>
-
-</style>    

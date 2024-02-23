@@ -7,7 +7,10 @@
         <!-- <p>{{ product.title }}</p>
         <p>{{ product.price }}</p>
         <p>{{ product.id }}</p> -->
-
+        <Head>
+            <Title>Baazar| {{ product.title }}</Title>
+            <Meta name="Description" :content="product.Description"/>  
+        </Head>
         <ProductDetails :product="product"/>
 
     </div>
@@ -15,14 +18,17 @@
 
 <script setup>
  const {id} =useRoute().params
- const uri= 'https://fakestoreapi.com/products/'+id              
+ const uri= 'https://fakestoreapi.com/products/'+id                 
  //  fetch the data 
  const { data:product }=await useFetch(uri)
  
  definePageMeta({
     layout:'products'
    })
-   
+   definePageMeta({
+    middleware:["auth"]
+})   
+
 
 </script>
 
