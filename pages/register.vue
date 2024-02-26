@@ -1,9 +1,8 @@
 
 <template>
-    <RegisterPage />
-  </template>
+  <RegisterPage />
+</template>
   
   <script setup>
-
-  </script>
+</script>
   

@@ -1,29 +1,27 @@
 <template>
-    <div>
-      <div class="grid grid-cols-4 gap-5">
+  <div>
+    <div class="grid grid-cols-4 gap-5">
       <div v-for="p in products">
         <!-- <NuxtLink :to="`/products/${p.id}`">{{ p.title }}</NuxtLink> -->
-        <ProductCard :product="p"/>
+        <ProductCard :product="p" />
       </div>
-     </div>
-    </div>  
+    </div>
+  </div>
 </template>
 
 <script setup>
 //  to apply layout to multiple pages
-   definePageMeta({
-    layout:'products'
-   })
+definePageMeta({
+  layout: "products",
+});
 //  fetch the data
-  const {data : products}= await useFetch('https://fakestoreapi.com/products')
-  definePageMeta({
-    middleware:["auth"]
-})
- 
- useHead({
-  title:  'Baazar | Clothing and Accessories',
-  meta:[
-        { name:'Description', content:'Clo'}
-      ],
- })
+const { data: products } = await useFetch("https://fakestoreapi.com/products");
+definePageMeta({
+  middleware: ["auth"],
+});
+
+useHead({
+  title: "Baazar | Clothing and Accessories",
+  meta: [{ name: "Description", content: "Clo" }],
+});
 </script>
